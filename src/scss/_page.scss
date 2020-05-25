@@ -1,0 +1,180 @@
+$page_font_size: 12pt !default;
+$page_font_weight: 100 !default;
+
+$page_color: #35393C !default;
+$page_color_bg_2: #f2f2f2 !default;
+$page_color_hl: #f1cf0b !default;
+$page_color_link: #33658A !default;
+$page_color_table_border: #ddd !default;
+
+$page_content_width: 800px !default;
+
+.page {
+    color: $page_color;
+    font-size: $page_font_size;
+    font-weight: $page_font_weight;
+
+    counter-reset: tab-counter 0 fig-counter 0 listing-counter 0;
+
+    
+
+    [contenteditable] {
+        outline: 0px solid transparent;
+    }
+
+    a {
+        color: $page_color_link;
+        &:hover {
+            color: lighten($page_color_link, 20);
+        }
+    }
+
+    button {
+        background-color: $page_color_hl;
+        color: $page_color_bg_2;
+        border-radius: 2px;
+        border: none;
+        padding: 15px 32px;
+        font-size: $page_font_size;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+            background-color: lighten($page_color_hl, 20); 
+        }
+    }
+
+    table {
+        margin: 0 auto;
+        text-align:center;
+        border-collapse: collapse;
+        caption-side: bottom;
+        counter-increment: tab-counter;
+
+        th, td {
+            border-bottom: 1px solid $page_color_table_border;
+            padding: 2px 5px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: $page_color_bg_2;
+        }
+
+        caption {
+            padding-top: 4px;
+            font-size: #{$page_font_size *0.8};
+
+            &::before {
+                font-weight: bold;
+                content: "Tab " counter(tab-counter) ": ";
+            }
+        }
+    }
+
+    figure {
+        text-align: center;
+        caption-side: bottom;
+        counter-increment: fig-counter;
+
+        figcaption {
+            padding-top: 4px;
+            font-size: #{$page_font_size *0.8};
+
+            &::before {
+                font-weight: bold;
+                content: "Fig " counter(fig-counter) ": ";
+            }
+        }
+    }
+    
+    .code {
+        counter-increment: listing-counter;
+        code {
+            white-space: pre;
+            font-size: #{ $page_font_size * 0.8 };
+            overflow-x: auto;
+        }
+        .caption {
+            text-align: center;
+            padding-top: 4px;
+            font-size: #{$page_font_size *0.8};
+
+            &::before {
+                font-weight: bold;
+                content: "Listing " counter(listing-counter) ": ";
+            }
+        }
+    }
+
+    .content {
+        width: 100%;
+        max-width: #{$page_content_width + 10px};
+        padding: 0 5px; 
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    [jsdox-editor] .content{
+        min-height: 30px;
+        border-top: 1px solid $page_color_table_border
+    }
+
+    [jsdox-editor] textarea.content {
+        display: block;
+        min-height: 100px;
+        border-color: $page_color_table_border;
+        outline:0px none transparent;
+    }
+
+    .vblock {
+        width:100%;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .refecrences {
+        & > ol, ul, p {
+            font-size: #{$page_font_size *0.8}; 
+        }
+    }
+
+    .marked-field {
+        background-color: $page_color_bg_2;
+        border-left: solid $page_color_hl 5px;
+        padding: 5px;
+        margin: 5px 0px;
+        border-radius: 4px;
+    }
+
+    label {
+        display: inline-block;
+        position: relative;
+        white-space: nowrap;
+        top: -16px;
+        width: 0px;
+        z-index: 600;
+        font-size: 8px;
+        vertical-align: super;
+    }
+
+    input, select {
+        width: auto;
+        padding: 6px 8px;
+        margin: 8px 16px 8px 0px;
+        display: inline-block;
+        border: 1px solid  $page_color_bg_2;
+        border-radius: 4px;
+        background-color: inherit;
+        box-sizing: border-box;
+
+        &.fill {
+            width: 100%;
+        }
+    }
+
+    .edit_menu {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+}

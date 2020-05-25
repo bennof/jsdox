@@ -1,0 +1,72 @@
+<div class="vblock">
+    <div class="content">
+        <h1>JS DoX</h1>
+        <h2>A lightweight dynamic HTML library</h2>
+        <h6>version: 0.5.5</h6>
+    </div>
+
+    <div class="content">
+        <h3>Features</h3>
+        <p>JS DoX offers 3 main features right now:</p>
+        <ul>
+            <li><code>load</code> additional html elements</li>
+            <li><code>process</code> a text processor loading elements and inserting calculated values</li>
+            <li><code>router</code> a simple url hash router</li>
+        </ul>
+
+        <h4>load(target = document, ctx = window)</h4>
+        <p>Load html documents and call <code>process()</code> on target elements.</p>
+        <div class="code">
+            <code clean-code>
+<div jsdox-load="/some/page.html"></div>
+<script>
+    JSDoX.load();
+</script>
+            </code>
+            <div class="caption">Example HTML loader</div>
+        </div>
+
+
+        <h4>process(target, ctx = window)</h4>
+        <p>Used to process elements, replaces insertions, load html, execute js ...</p>
+        <p>Example:</p>
+        <div class="code">
+            <code clean-code>
+<div id="test">
+    <p>Some text with included values, perhaps the Date: <span jsdox-value>new Date()</span></p>
+    <div jsdox-load="/some/page.html"></div>
+    <script>
+        console.log("Hello World");
+    </script>
+</div>
+<script>
+    JSDoX.process(document.getElementById("test"));
+</script>
+            </code>
+            <div class="caption">Example process</div>
+        </div>
+
+
+        <h4>router()</h4>
+        <p>
+            The router uses url hash fields to update the target area.
+            To enable the router just call <code>JSDoX.router();</code> in a 
+            script tag at the end of the page.
+            The router will update the first element with a <code>jsdox-router</code>
+            attribute. A default value/page can be set by setting the attribute to a 
+            valid path.
+        </p>
+        <p>Example:</p>
+        <div class="code">
+            <code clean-code>
+<a href="#jsdox-router=/some/page1.html">Page1</a>
+<a href="#jsdox-router=/some/page2.html">Page2s</a>
+<div jsdox-router="/some/page1.html"></div>
+<script>
+    JSDoX.router();
+</script>
+            </code>
+            <div class="caption">Example using the hash router</div>
+        </div>
+    </div>
+</div>

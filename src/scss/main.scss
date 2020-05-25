@@ -1,0 +1,63 @@
+/*
+** Copyright (c) 2018-2020 Benjamin 'Benno' Falkner
+** 
+** Permission is hereby granted, free of charge, to any person obtaining a copy
+** of this software and associated documentation files (the "Software"), to deal
+** in the Software without restriction, including without limitation the rights
+** to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+** copies of the Software, and to permit persons to whom the Software is
+** furnished to do so, subject to the following conditions:
+** 
+** The above copyright notice and this permission notice shall be included in all
+** copies or substantial portions of the Software.
+** 
+** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+** IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+** FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+** AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+** LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+** OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+** SOFTWARE.
+*/
+
+$blue: #33658A; 
+$grey: #35393C; 
+$green: #5DA399; 
+$greyblue: #364156; 
+$red: #af5431; 
+$yellow: #f1cf0b;
+$violet: #8b61ad;
+$lightgreen: #bce42a;
+
+html, body  {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #35393C;
+    min-height: 1vh;
+    min-width: 1vw;
+}
+
+a { color: #33658A; }
+a:hover { color: #364156; }
+
+.container,
+.main {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+div.hblock {
+    width:100%;
+    overflow-x: auto;
+}
+
+
+
+.content {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+@import "./header";
+@import "./footer";
+@import "./page";

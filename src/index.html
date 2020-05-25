@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="JSDoX - a minimal dynamic html library" />
+    <meta name="author" content="Benjamin 'Benno' Falkner" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS DoX - document oriented web </title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    
+</head>
+<body class="has-menubar">
+    <!-- header with menu --> 
+    <div class="header" jsdox-load="html/header.html"></div>
+
+    <!-- page -->
+    <div class="page" jsdox-router="html/content.html"></div>
+
+    <!-- footer -->
+    <div class="footer" jsdox-load="html/footer.html"></div>
+
+    <script>
+        JSDoX.load();
+        JSDoX.router();
+    </script>
+</body>
+</html>

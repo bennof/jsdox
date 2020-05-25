@@ -1,0 +1,33 @@
+<div class="vblock" jsdox-editor>
+    <div class="content">
+        <h1>JS DoX Editor</h1>
+        <h2>A lightweight pure html editor with emmet support</h2>
+        <h6>version: 0.5.5</h6>
+    </div>
+
+    <div class="content">
+        <p>You can edit all non static elements of this page.</p>
+        <p>All elements are processed by JSDoX.</p>
+    </div>
+
+    <div class="content">
+        <h3>Script tags</h3>
+        <p>Check console!</p>
+        <script>console.log("This is a script tag")</script>
+    </div>
+
+    <div class="content">
+        <h3>Computed values</h3>
+        <p>The date object: <span jsdox-value>new Date()</span></p>
+    </div>
+
+    <div class="content">
+        <h3>Load HTML</h3>
+        <div jsdox-load="/html/test.html"></div>
+    </div>
+
+</div>
+
+<script>
+    JSDoX.editor.enable();
+</script>
