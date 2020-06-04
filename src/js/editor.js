@@ -42,8 +42,9 @@ function editor_on_tab_expand(e){
             e.target.value = e.target.value.substring(0,line_start)+line;
             e.target.selectionStart = ll;
             e.target.selectionEnd = ll;
-        } catch (e) {}
-        
+        } catch (e) {} 
+    } else if (e.ctrlKey && e.keyCode == 13) {
+        editor_disable_block_edit();
     }
 }
 

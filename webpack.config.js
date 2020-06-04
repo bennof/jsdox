@@ -7,6 +7,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     'JSDoX': ['./src/index.js'],
+    'Style': ['./src/style.js'],
   },
   output: {
     library: '[name]',
