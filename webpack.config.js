@@ -6,12 +6,12 @@ const path = require('path');
 module.exports = {
   devtool: 'source-map',
   entry: {
-    'jsdox': ['./src/index.js'],
+    'JSDoX': ['./src/index.js'],
   },
   output: {
-    library: 'JSDoX',
+    library: '[name]',
     libraryTarget: 'umd',
-    filename: 'jxdox.js',
+    filename: '[name].js',
     //path: path.resolve(__dirname, './'),
   },
   module: { 

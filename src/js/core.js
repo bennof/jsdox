@@ -51,6 +51,7 @@ function exec_js(target, context = window){
             cur.src = "";
         }
 
+        context.script_obj = cur
         // execute in context
         try {
             console.log(cur.innerText)
@@ -58,6 +59,7 @@ function exec_js(target, context = window){
         } catch (e) {
             console.error("ERROR: exec js!" + e);
         }
+        context.script_obj = undefined;
     }
 }
 
@@ -89,7 +91,7 @@ export function process(target, ctx = window){
     exec_js(target,ctx); // execute js 
     replace_vals(target,ctx); // replace values
     if (typeof MathJax != "undefined") 
-        MathJax.typesetPromise(target);
+        MathJax.typesetPromise();
 }
 
 /**
